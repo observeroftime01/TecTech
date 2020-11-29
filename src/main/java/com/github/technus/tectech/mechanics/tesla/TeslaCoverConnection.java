@@ -1,14 +1,20 @@
 package com.github.technus.tectech.mechanics.tesla;
 
 import com.github.technus.tectech.util.Vec3Impl;
+import com.google.common.base.Objects;
 import gregtech.api.interfaces.tileentity.IGregTechTileEntity;
+
+import static com.github.technus.tectech.mechanics.tesla.ITeslaConnectable.TeslaUtil.teslaSimpleNodeSetAdd;
+import static com.github.technus.tectech.mechanics.tesla.ITeslaConnectable.TeslaUtil.teslaSimpleNodeSetRemove;
 
 public class TeslaCoverConnection implements ITeslaConnectableSimple {
     private final IGregTechTileEntity IGT;
+    private final Vec3Impl pos;
     private final byte teslaReceptionCapability;
 
     public TeslaCoverConnection(IGregTechTileEntity IGT, byte teslaReceptionCapability) {
         this.IGT = IGT;
+        this.pos = new Vec3Impl(IGT);
         this.teslaReceptionCapability = teslaReceptionCapability;
     }
 
@@ -34,7 +40,7 @@ public class TeslaCoverConnection implements ITeslaConnectableSimple {
 
     @Override
     public Vec3Impl getTeslaPosition() {
-        return new Vec3Impl(IGT);
+        return pos;
     }
 
     @Override
@@ -45,6 +51,27 @@ public class TeslaCoverConnection implements ITeslaConnectableSimple {
     @Override
     public boolean teslaInjectEnergy(long teslaVoltageInjected) {
         //Same as in the microwave transmitters, this does not account for amp limits
-        return IGT.injectEnergyUnits((byte) 1, teslaVoltageInjected, 1L) > 0L;
+        boolean output = false;
+
+        if (!IGT.isDead()){
+            output = IGT.injectEnergyUnits((byte) 1, teslaVoltageInjected, 1L) > 0L;
+        } else {
+            teslaSimpleNodeSetRemove(this);
+        }
+
+        return output;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        TeslaCoverConnection that = (TeslaCoverConnection) o;
+        return Objects.equal(IGT, that.IGT);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(IGT);
     }
 }
