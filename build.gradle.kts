@@ -6,8 +6,10 @@ import java.io.*
 buildscript {
     repositories {
         mavenCentral()
-        maven("http://files.minecraftforge.net/maven")
+        maven("https://files.minecraftforge.net/maven")
         maven("https://jitpack.io")
+		maven("https://gregtech.overminddl1.com/")
+		maven("https://oss.sonatype.org/content/repositories/snapshots/")
     }
     dependencies {
         classpath("com.github.GTNH2:ForgeGradle:FG_1.2-SNAPSHOT")
