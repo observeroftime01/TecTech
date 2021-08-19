@@ -630,6 +630,8 @@ public class MachineLoader implements Runnable {
         Machine_BuckConverter_UIV.set(new GT_MetaTileEntity_BuckConverter(15491, "machine.tt.buck.11", "Insanely Ultimate Buck Converter", 11).getStackForm(1L));
         Machine_BuckConverter_UMV.set(new GT_MetaTileEntity_BuckConverter(15492, "machine.tt.buck.12", "Mega Ultimate Buck Converter", 12).getStackForm(1L));
         Machine_BuckConverter_UXV.set(new GT_MetaTileEntity_BuckConverter(15493, "machine.tt.buck.13", "Extended Mega Ultimate Buck Converter", 13).getStackForm(1L));
+        Machine_BuckConverter_OPV.set(new GT_MetaTileEntity_BuckConverter(15494, "machine.tt.buck.14", "Overpowered Buck Converter", 14).getStackForm(1L));
+
 
         // ===================================================================================================
         // Tesla Transceiver
