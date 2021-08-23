@@ -1018,7 +1018,7 @@ public class DreamCraftRecipeLoader implements Runnable {
         TT_recipeAdder.addResearchableAssemblylineRecipe(ItemList.Circuit_Wetwaresupercomputer.get(1L),
                 24000, 64, 50000, 4, new ItemStack[]{
                         GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Tritanium, 2),
-                        ItemList.Circuit_Wetwaresupercomputer.get(2L),
+                        ItemList.Circuit_Wetwaresupercomputer.get(1L),
                         ItemList.ZPM_Coil.get(16L),
                         ItemList.Circuit_Parts_CapacitorASMD.get(16L),
                         ItemList.Circuit_Parts_ResistorASMD.get(16L),
@@ -1037,7 +1037,7 @@ public class DreamCraftRecipeLoader implements Runnable {
         TT_recipeAdder.addResearchableAssemblylineRecipe(ItemList.Circuit_Biowarecomputer.get(1L),
                 48000, 128, 500000, 8, new ItemStack[]{
                         ItemList.Circuit_Board_Bio_Ultra.get(2L),
-                        ItemList.Circuit_Biowarecomputer.get(2L),
+                        ItemList.Circuit_Biowarecomputer.get(1L),
                         ItemList.Circuit_Parts_TransistorASMD.get(16L),
                         ItemList.Circuit_Parts_ResistorASMD.get(16L),
                         ItemList.Circuit_Parts_CapacitorASMD.get(16L),
@@ -1056,7 +1056,7 @@ public class DreamCraftRecipeLoader implements Runnable {
         TT_recipeAdder.addResearchableAssemblylineRecipe(ItemList.Circuit_Biowaresupercomputer.get(1L),
                 96000, 256, 1000000, 16, new ItemStack[]{
                         GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Tritanium, 4L),
-                        ItemList.Circuit_Biowaresupercomputer.get(2L),
+                        ItemList.Circuit_Biowaresupercomputer.get(1L),
                         ItemList.UV_Coil.get(16L),
                         ItemList.Circuit_Parts_CapacitorASMD.get(24L),
                         ItemList.Circuit_Parts_ResistorASMD.get(24L),
@@ -1076,7 +1076,7 @@ public class DreamCraftRecipeLoader implements Runnable {
         TT_recipeAdder.addResearchableAssemblylineRecipe(ItemList.Circuit_Biomainframe.get(1L),
                 192000, 512, 2000000, 32, new ItemStack[]{
                         GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Tritanium, 8),
-                        ItemList.Circuit_Biomainframe.get(2L),
+                        ItemList.Circuit_Biomainframe.get(1L),
                         ItemList.Circuit_Parts_CapacitorASMD.get(32L),
                         ItemList.Circuit_Parts_ResistorASMD.get(32L),
                         ItemList.Circuit_Parts_TransistorASMD.get(32L),
@@ -1098,7 +1098,7 @@ public class DreamCraftRecipeLoader implements Runnable {
                 384000, 1024, 4000000, 64, new ItemStack[]{
                         ItemList.Circuit_Board_Bio_Ultra.get(1L),
                         getItemContainer("PicoWafer").get(4L),
-                        getItemContainer("NanoCircuit").get(2L),
+                        getItemContainer("NanoCircuit").get(1L),
                         ItemList.Circuit_Parts_TransistorASMD.get(484L),
                         ItemList.Circuit_Parts_ResistorASMD.get(48L),
                         ItemList.Circuit_Parts_CapacitorASMD.get(48L),
@@ -1117,7 +1117,7 @@ public class DreamCraftRecipeLoader implements Runnable {
         TT_recipeAdder.addResearchableAssemblylineRecipe(getItemContainer("PikoCircuit").get(1L),
                 720000, 2048, 8000000, 128, new ItemStack[]{
                         GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Neutronium, 16),
-                        getItemContainer("PikoCircuit").get(8L),
+                        getItemContainer("PikoCircuit").get(1L),
                         ItemList.Circuit_Parts_CapacitorASMD.get(64L),
                         ItemList.Circuit_Parts_DiodeASMD.get(64L),
                         ItemList.Circuit_Parts_TransistorASMD.get(64L),
