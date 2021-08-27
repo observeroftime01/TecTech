@@ -789,7 +789,7 @@ public class DreamCraftRecipeLoader implements Runnable {
                         Materials.SolderingAlloy.getMolten(2592),
                         Materials.Lubricant.getFluid(4000),
                         Materials.Silicone.getMolten(5760)}, ItemList.Conveyor_Module_UHV.get(1), 1000, 200000);
-
+        //Conveyor Belt UEV
         TT_recipeAdder.addResearchableAssemblylineRecipe(ItemList.Conveyor_Module_UHV.get(1L),
                 48000, 64, 200000, 8, new ItemStack[]{
                         ItemList.Electric_Motor_UEV.get(2L),
@@ -801,6 +801,20 @@ public class DreamCraftRecipeLoader implements Runnable {
                         Materials.SolderingAlloy.getMolten(5184),
                         Materials.Lubricant.getFluid(8000),
                         Materials.Silicone.getMolten(11520)}, ItemList.Conveyor_Module_UEV.get(1), 2000, 800000);
+        //Conveyor Belt UIV
+        TT_recipeAdder.addResearchableAssemblylineRecipe(ItemList.Conveyor_Module_UEV.get(1L),
+                192000, 1024, 2000000, 8, new ItemStack[]{
+                        ItemList.Electric_Motor_UEV.get(8L),
+                        GT_OreDictUnificator.get(OrePrefixes.plateDense, Materials.Americium, 4L),
+                        GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Tritanium, 64L),
+                        GT_OreDictUnificator.get(OrePrefixes.round, Materials.Duranium, 64L),
+                        GT_OreDictUnificator.get(OrePrefixes.round, Materials.Duranium, 64L),
+                        GT_OreDictUnificator.get(OrePrefixes.cableGt08, Materials.Infinity, 2L),
+                        getItemContainer("PikoCircuit").get(1L)}, new FluidStack[]{
+                        Materials.Infinity.getMolten(1152),
+                        Materials.SolderingAlloy.getMolten(5184),
+                        Materials.Lubricant.getFluid(8000),
+                        Materials.Silicone.getMolten(11520)}, ItemList.Conveyor_Module_UIV.get(1), 4000, 2090000);
 
         //Piston UV-UHV
         TT_recipeAdder.addResearchableAssemblylineRecipe(ItemList.Electric_Piston_UV.get(1L),
