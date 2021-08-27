@@ -809,12 +809,31 @@ public class DreamCraftRecipeLoader implements Runnable {
                         GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Tritanium, 64L),
                         GT_OreDictUnificator.get(OrePrefixes.round, Materials.Duranium, 64L),
                         GT_OreDictUnificator.get(OrePrefixes.round, Materials.Duranium, 64L),
-                        GT_OreDictUnificator.get(OrePrefixes.cableGt08, Materials.Infinity, 2L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt08, Materials.Infinity, 2L),
                         getItemContainer("PikoCircuit").get(1L)}, new FluidStack[]{
                         Materials.Infinity.getMolten(1152),
                         Materials.SolderingAlloy.getMolten(5184),
                         Materials.Lubricant.getFluid(8000),
                         Materials.Silicone.getMolten(11520)}, ItemList.Conveyor_Module_UIV.get(1), 4000, 2090000);
+        //Motor UIV
+        TT_recipeAdder.addResearchableAssemblylineRecipe(ItemList.Electric_Motor_UEV.get(1L),
+                192000, 1024, 2000000, 8, new ItemStack[]{
+                        GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.SamariumMagnetic, 16L),
+                        GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Americium, 16L),
+                        GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Tritanium, 16L),
+                        GT_OreDictUnificator.get(OrePrefixes.round, Materials.Infinity, 64L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.DraconiumAwakened, 64L),//TODO Fusion T4 Material
+                        GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Infinity, 64L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.CosmicNeutronium, 64L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Neutronium, 64L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Tritanium, 64L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Duranium, 64L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Ichorium, 64L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Iridium, 64L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt08, Materials.Infinity, 2L)}, new FluidStack[]{
+                        Materials.Infinity.getMolten(1152),
+                        Materials.SolderingAlloy.getMolten(5184),
+                        Materials.Lubricant.getFluid(8000)}, ItemList.Electric_Motor_UIV.get(1L), 4000, 2090000);
 
         //Piston UV-UHV
         TT_recipeAdder.addResearchableAssemblylineRecipe(ItemList.Electric_Piston_UV.get(1L),
