@@ -810,7 +810,7 @@ public class DreamCraftRecipeLoader implements Runnable {
                         GT_OreDictUnificator.get(OrePrefixes.round, Materials.Duranium, 64L),
                         GT_OreDictUnificator.get(OrePrefixes.round, Materials.Duranium, 64L),
                         GT_OreDictUnificator.get(OrePrefixes.wireGt08, Materials.Infinity, 2L),
-                        getItemContainer("PikoCircuit").get(1L)}, new FluidStack[]{
+                        getItemContainer("NanoCircuit").get(1L)}, new FluidStack[]{
                         Materials.Infinity.getMolten(1152),
                         Materials.SolderingAlloy.getMolten(5184),
                         Materials.Lubricant.getFluid(8000),
