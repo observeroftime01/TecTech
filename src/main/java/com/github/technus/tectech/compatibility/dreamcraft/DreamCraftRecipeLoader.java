@@ -804,7 +804,7 @@ public class DreamCraftRecipeLoader implements Runnable {
         //Conveyor Belt UIV
         TT_recipeAdder.addResearchableAssemblylineRecipe(ItemList.Conveyor_Module_UEV.get(1L),
                 192000, 1024, 2000000, 8, new ItemStack[]{
-                        ItemList.Electric_Motor_UEV.get(8L),
+                        ItemList.Electric_Motor_UIV.get(2L),
                         GT_OreDictUnificator.get(OrePrefixes.plateDense, Materials.Americium, 4L),
                         GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Tritanium, 64L),
                         GT_OreDictUnificator.get(OrePrefixes.round, Materials.Duranium, 64L),
