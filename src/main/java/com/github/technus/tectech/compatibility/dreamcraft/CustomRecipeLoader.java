@@ -57,7 +57,7 @@ public class CustomRecipeLoader implements Runnable{
                 24000, 64, 200000, 6, new Object[]{
                 GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Neutronium, 32L),
                 GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Neutronium, 32L),
-                new Object[]{GT_OreDictUnificator.get(circuit, Bio, 4L)},
+                ItemList.Circuit_Biomainframe.get(4L),
                 ItemList.ZPM2.get(8),
                 ItemList.Field_Generator_UHV.get(4),
                 ItemList.Circuit_Wafer_UHPIC.get(64),
