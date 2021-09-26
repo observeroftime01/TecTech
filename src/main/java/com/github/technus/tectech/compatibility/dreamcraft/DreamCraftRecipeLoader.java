@@ -1264,43 +1264,6 @@ public class DreamCraftRecipeLoader implements Runnable {
         		}, CustomItemList.hatch_CreativeMaintenance.get(1), 6000, 500000);
 
         //Batteries
-        TT_recipeAdder.addResearchableAssemblylineRecipe(ItemList.Energy_Cluster.get(1L), 12000, 16, 100000, 3, new Object[]{
-                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Tritanium, 64L),
-                new Object[]{OrePrefixes.circuit.get(Materials.Infinite), 1L},
-                new Object[]{OrePrefixes.circuit.get(Materials.Infinite), 1L},
-                new Object[]{OrePrefixes.circuit.get(Materials.Infinite), 1L},
-                new Object[]{OrePrefixes.circuit.get(Materials.Infinite), 1L},
-                ItemList.Energy_Cluster.get(8L),
-                ItemList.Field_Generator_UV.get(2),
-                ItemList.Circuit_Wafer_HPIC.get(64),
-                ItemList.Circuit_Wafer_HPIC.get(64),
-                ItemList.Circuit_Parts_DiodeASMD.get(32),
-                GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorUHV, 32),
-        }, new FluidStack[]{
-                Materials.SolderingAlloy.getMolten(2880),
-                new FluidStack(FluidRegistry.getFluid("ic2coolant"), 16000)
-        }, ItemList.ZPM2.get(1), 3000, 400000);
-
-        TT_recipeAdder.addResearchableAssemblylineRecipe(ItemList.ZPM2.get(1L), 24000, 64, 200000, 6, new Object[]{
-                GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Neutronium, 32L),
-                GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Neutronium, 32L),
-                new Object[]{OrePrefixes.circuit.get(Materials.Bio), 1L},
-                new Object[]{OrePrefixes.circuit.get(Materials.Bio), 1L},
-                new Object[]{OrePrefixes.circuit.get(Materials.Bio), 1L},
-                new Object[]{OrePrefixes.circuit.get(Materials.Bio), 1L},
-                ItemList.ZPM2.get(8),
-                ItemList.Field_Generator_UHV.get(4),
-                ItemList.Circuit_Wafer_UHPIC.get(64),
-                ItemList.Circuit_Wafer_UHPIC.get(64),
-                ItemList.Circuit_Wafer_SoC2.get(32),
-                ItemList.Circuit_Parts_DiodeASMD.get(64),
-                GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.SuperconductorUHV, 64),
-        }, new FluidStack[]{
-                Materials.SolderingAlloy.getMolten(3760),
-                Materials.Naquadria.getMolten(9216),
-                new FluidStack(FluidRegistry.getFluid("ic2coolant"), 32000)
-        }, ItemList.ZPM3.get(1), 4000, 1600000);
-        
 
         
         //region singleblocks
