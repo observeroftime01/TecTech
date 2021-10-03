@@ -1,6 +1,7 @@
 package com.github.technus.tectech.compatibility.dreamcraft;
 
 import com.github.technus.tectech.recipe.TT_recipeAdder;
+import gregtech.api.enums.GTNH_ExtraMaterials;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
@@ -10,14 +11,28 @@ import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 
 import static gregtech.api.enums.Materials.*;
-import static gregtech.api.enums.Materials.Gold;
 import static gregtech.api.enums.OrePrefixes.*;
-import static gregtech.api.enums.OrePrefixes.wireFine;
+import static gregtech.api.enums.ItemList.*;
 
 public class CustomRecipeLoader implements Runnable{
     @Override
     public void run() {
+        // UIV Pump recipe
+        TT_recipeAdder.addResearchableAssemblylineRecipe(ItemList.Electric_Pump_UEV.get(1L),
+                192000, 256, 800000, 8, new ItemStack[]{
+                        ItemList.Electric_Motor_UIV.get(1L),
+                        GT_OreDictUnificator.get(pipeHuge, Infinity, 8L),
+                        GT_OreDictUnificator.get(plateDense, BlackPlutonium, 8L),
+                        GT_OreDictUnificator.get(plateDense, BlackPlutonium, 8L),
+                        GT_OreDictUnificator.get(screw, Tartarite, 64L),
+                        GT_OreDictUnificator.get(ring, (AnySyntheticRubber), 64L),
+                        GT_OreDictUnificator.get(rotor, GTNH_ExtraMaterials.ExtremeTurbineSteel, 4L),
+                        GT_OreDictUnificator.get(cableGt16, NetherStar, 8L)}, new FluidStack[]{
+                        Naquadria.getMolten(3888),
+                        SolderingAlloy.getMolten(7776),
+                        Lubricant.getFluid(10000)}, Electric_Pump_UIV.get(1), 4000, 3200000);
 
+        // Advanced Chemical Reactor Recipe
         TT_recipeAdder.addResearchableAssemblylineRecipe(ItemList.Machine_Multi_LargeChemicalReactor.get(1L),
                 480000, 1024, 2000000, 8, new ItemStack[]{
                         ItemList.Machine_Multi_LargeChemicalReactor.get(1L),
@@ -36,7 +51,7 @@ public class CustomRecipeLoader implements Runnable{
                 ItemList.Machine_Multi_Advanced_LargeChemicalReactor.get(1L), 2000, 800000);
 
 
-
+        // Modified Lapotron Recipes
         TT_recipeAdder.addResearchableAssemblylineRecipe(ItemList.Energy_Cluster.get(1L),
                 12000, 16, 100000, 3, new Object[]{
                 GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Tritanium, 64L),
@@ -52,7 +67,7 @@ public class CustomRecipeLoader implements Runnable{
                 new FluidStack(FluidRegistry.getFluid("ic2coolant"), 16000)
         }, ItemList.ZPM2.get(1), 3000, 400000);
 
-
+        // Modified Lapotron Recipes
         TT_recipeAdder.addResearchableAssemblylineRecipe(ItemList.ZPM2.get(1L),
                 24000, 64, 200000, 6, new Object[]{
                 GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Neutronium, 32L),
