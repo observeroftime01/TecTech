@@ -109,7 +109,7 @@ public class CustomRecipeLoader implements Runnable{
                         GT_OreDictUnificator.get(OrePrefixes.wireGt16, Draconium, 4L),
                         ItemList.Circuit_Chip_QPIC.get(16L),
                         new Object[]{OrePrefixes.circuit.get(Materials.Bio), 2L},
-                        Field_Generator_UEV.get(1L),
+                        UEV_Coil.get(16L),
                         ItemList.Reactor_Coolant_He_6.get(1L),
                         ItemList.Reactor_Coolant_He_6.get(1L),
                         ItemList.Reactor_Coolant_He_6.get(1L),

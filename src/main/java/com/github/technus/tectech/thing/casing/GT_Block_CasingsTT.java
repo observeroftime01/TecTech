@@ -31,7 +31,7 @@ public class GT_Block_CasingsTT extends GT_Block_Casings_Abstract {
 
     public GT_Block_CasingsTT() {
         super(GT_Item_CasingsTT.class, "gt.blockcasingsTT", GT_Material_Casings.INSTANCE);
-        setCreativeTab(creativeTabTecTech);
+
 
         for (byte b = 0; b < 16; b = (byte) (b + 1)) {
             Textures.BlockIcons.casingTexturePages[texturePage][b] = new GT_CopiedBlockTexture(this, 6, b);
