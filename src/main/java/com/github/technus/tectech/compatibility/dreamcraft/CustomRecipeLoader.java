@@ -1,22 +1,37 @@
 package com.github.technus.tectech.compatibility.dreamcraft;
 
 import com.github.technus.tectech.recipe.TT_recipeAdder;
-import gregtech.api.enums.GTNH_ExtraMaterials;
-import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
-import gregtech.api.enums.OrePrefixes;
+import gregtech.api.enums.*;
+import gregtech.api.interfaces.IItemContainer;
 import gregtech.api.util.GT_OreDictUnificator;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 
+
 import static gregtech.api.enums.Materials.*;
 import static gregtech.api.enums.OrePrefixes.*;
 import static gregtech.api.enums.ItemList.*;
 
+
 public class CustomRecipeLoader implements Runnable{
+
+    @SuppressWarnings("rawtypes")
+    private Class CUSTOM_ITEM_LIST;
+
+    @SuppressWarnings("unchecked")
+    private IItemContainer getItemContainer(String name) {
+        return (IItemContainer) Enum.valueOf(CUSTOM_ITEM_LIST, name);
+    }
+
     @Override
     public void run() {
+
+        try {
+            CUSTOM_ITEM_LIST = Class.forName("com.dreammaster.gthandler.CustomItemList");
+        } catch (Exception e) {
+            throw new Error(e);
+        }
         // UIV Pump recipe
         TT_recipeAdder.addResearchableAssemblylineRecipe(ItemList.Electric_Pump_UEV.get(1L),
                 192000, 256, 800000, 8, new ItemStack[]{
@@ -54,36 +69,59 @@ public class CustomRecipeLoader implements Runnable{
         // Modified Lapotron Recipes
         TT_recipeAdder.addResearchableAssemblylineRecipe(ItemList.Energy_Cluster.get(1L),
                 12000, 16, 100000, 3, new Object[]{
-                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Tritanium, 64L),
-                ItemList.Circuit_Wetwaremainframe.get(4),
-                ItemList.Energy_Cluster.get(8L),
-                ItemList.Field_Generator_UV.get(2),
-                ItemList.Circuit_Wafer_HPIC.get(64),
-                ItemList.Circuit_Wafer_HPIC.get(64),
-                ItemList.Circuit_Parts_DiodeASMD.get(32),
-                GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorUHV, 32),
-        }, new FluidStack[]{
-                Materials.SolderingAlloy.getMolten(2880),
-                new FluidStack(FluidRegistry.getFluid("ic2coolant"), 16000)
-        }, ItemList.ZPM2.get(1), 3000, 400000);
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Tritanium, 64L),
+                        ItemList.Circuit_Wetwaremainframe.get(4),
+                        ItemList.Energy_Cluster.get(8L),
+                        ItemList.Field_Generator_UV.get(2),
+                        ItemList.Circuit_Wafer_HPIC.get(64),
+                        ItemList.Circuit_Wafer_HPIC.get(64),
+                        ItemList.Circuit_Parts_DiodeASMD.get(32),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorUHV, 32),
+                }, new FluidStack[]{
+                        Materials.SolderingAlloy.getMolten(2880),
+                        new FluidStack(FluidRegistry.getFluid("ic2coolant"), 16000)
+                }, ItemList.ZPM2.get(1), 3000, 400000);
 
         // Modified Lapotron Recipes
         TT_recipeAdder.addResearchableAssemblylineRecipe(ItemList.ZPM2.get(1L),
                 24000, 64, 200000, 6, new Object[]{
-                GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Neutronium, 32L),
-                GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Neutronium, 32L),
-                ItemList.Circuit_Biomainframe.get(4L),
-                ItemList.ZPM2.get(8),
-                ItemList.Field_Generator_UHV.get(4),
-                ItemList.Circuit_Wafer_UHPIC.get(64),
-                ItemList.Circuit_Wafer_UHPIC.get(64),
-                ItemList.Circuit_Wafer_SoC2.get(32),
-                ItemList.Circuit_Parts_DiodeASMD.get(64),
-                GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.SuperconductorUHV, 64),
-        }, new FluidStack[]{
-                Materials.SolderingAlloy.getMolten(3760),
-                Materials.Naquadria.getMolten(9216),
-                new FluidStack(FluidRegistry.getFluid("ic2coolant"), 32000)
-        }, ItemList.ZPM3.get(1), 4000, 1600000);
+                        GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Neutronium, 32L),
+                        GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Neutronium, 32L),
+                        ItemList.Circuit_Biomainframe.get(4L),
+                        ItemList.ZPM2.get(8),
+                        ItemList.Field_Generator_UHV.get(4),
+                        ItemList.Circuit_Wafer_UHPIC.get(64),
+                        ItemList.Circuit_Wafer_UHPIC.get(64),
+                        ItemList.Circuit_Wafer_SoC2.get(32),
+                        ItemList.Circuit_Parts_DiodeASMD.get(64),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.SuperconductorUHV, 64),
+                }, new FluidStack[]{
+                        Materials.SolderingAlloy.getMolten(3760),
+                        Materials.Naquadria.getMolten(9216),
+                        new FluidStack(FluidRegistry.getFluid("ic2coolant"), 32000)
+                }, ItemList.ZPM3.get(1), 4000, 1600000);
+
+        //UEV Energy Hatch
+        //TODO: Add UEV Energy Coils for the UEV energy hatch recicpe
+        TT_recipeAdder.addResearchableAssemblylineRecipe(Hatch_Energy_MAX.get(1L),
+                48000, 16, 500000, 6, new Object[]{
+                        getItemContainer("Hull_UEV").get(1),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt16, Draconium, 4L),
+                        ItemList.Circuit_Chip_QPIC.get(16L),
+                        new Object[]{OrePrefixes.circuit.get(Materials.Bio), 2L},
+                        Field_Generator_UEV.get(1L),
+                        ItemList.Reactor_Coolant_He_6.get(1L),
+                        ItemList.Reactor_Coolant_He_6.get(1L),
+                        ItemList.Reactor_Coolant_He_6.get(1L),
+                        ItemList.Reactor_Coolant_He_6.get(1L),
+                        ItemList.Reactor_Coolant_He_6.get(1L),
+                        ItemList.Reactor_Coolant_He_6.get(1L),
+                        ItemList.Reactor_Coolant_He_6.get(1L),
+                        ItemList.Reactor_Coolant_He_6.get(1L),
+                        ItemList.Electric_Pump_UEV.get(1L)},
+                new FluidStack[]{
+                        new FluidStack(FluidRegistry.getFluid("ic2coolant"), 16000),
+                        Materials.SolderingAlloy.getMolten(5760),
+                }, getItemContainer("Hatch_Energy_UEV").get(1), 1000, 2000000);
     }
 }

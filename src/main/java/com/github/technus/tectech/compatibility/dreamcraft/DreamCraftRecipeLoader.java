@@ -24,6 +24,9 @@ import net.minecraftforge.fluids.FluidStack;
 import java.lang.reflect.Method;
 
 import static com.github.technus.tectech.loader.recipe.RecipeLoader.getOrDefault;
+import static gregtech.api.enums.ItemList.Field_Generator_UEV;
+import static gregtech.api.enums.ItemList.Hatch_Energy_MAX;
+import static gregtech.api.enums.Materials.Draconium;
 
 /**
  * Created by Tec on 06.08.2017.
